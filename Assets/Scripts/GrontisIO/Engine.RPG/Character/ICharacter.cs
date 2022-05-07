@@ -1,4 +1,4 @@
-namespace GrontisIO.RPG.Character
+namespace GrontisIO.engine.RPG.Character
 {
     public interface ICharacter
     {

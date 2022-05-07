@@ -1,4 +1,4 @@
-namespace GrontisIO.RPG.Ability
+namespace GrontisIO.Engine.RPG.Ability
 {
     public interface IAbility
     {

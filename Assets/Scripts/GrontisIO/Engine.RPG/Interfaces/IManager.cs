@@ -1,4 +1,4 @@
-namespace GrontisIO.RPG.UI.Interfaces
+namespace GrontisIO.engine.RPG.Interfaces
 {
     public interface IManager
     {

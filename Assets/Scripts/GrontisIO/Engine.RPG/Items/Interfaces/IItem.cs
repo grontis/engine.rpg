@@ -1,4 +1,4 @@
-namespace GrontisIO.RPG.Items.Interfaces
+namespace GrontisIO.engine.RPG.Items.Interfaces
 {
     public interface IItem
     {

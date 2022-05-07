@@ -1,4 +1,4 @@
-namespace GrontisIO.RPG.Interfaces
+namespace GrontisIO.engine.RPG.Interfaces
 {
     public interface IEventTrigger <in T> where T : IDataTransferObject
     {

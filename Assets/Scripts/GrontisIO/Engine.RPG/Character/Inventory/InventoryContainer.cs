@@ -1,8 +1,8 @@
 using System;
 using System.Collections.Generic;
-using GrontisIO.RPG.Items.Interfaces;
+using GrontisIO.engine.RPG.Items.Interfaces;
 
-namespace GrontisIO.RPG.Character.Inventory
+namespace GrontisIO.engine.RPG.Character.Inventory
 {
     public class InventoryContainer
     {

@@ -1,4 +1,4 @@
-namespace GrontisIO.RPG.Turn.Interfaces
+namespace GrontisIO.engine.RPG.Turn.Interfaces
 {
     public interface ITurnEntity
     {

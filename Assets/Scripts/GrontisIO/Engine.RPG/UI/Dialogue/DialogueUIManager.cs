@@ -1,11 +1,10 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using GrontisIO.RPG.Dialogue;
-using GrontisIO.RPG.UI.Interfaces;
+using GrontisIO.engine.RPG.Dialogue;
+using GrontisIO.engine.RPG.Interfaces;
 using UnityEngine;
 
-namespace GrontisIO.RPG.UI.Dialogue
+namespace GrontisIO.engine.RPG.UI.Dialogue
 {
     public class DialogueUIManager : MonoBehaviour, IManager 
     {
