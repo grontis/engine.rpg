@@ -1,7 +1,7 @@
-using GrontisIO.engine.RPG.Interfaces;
+using GrontisIO.Engine.RPG.Interfaces;
 using UnityEngine;
 
-namespace GrontisIO.engine.RPG.Dialogue
+namespace GrontisIO.Engine.RPG.Dialogue
 {
     [System.Serializable]
     public class DialogueDTO : IDataTransferObject

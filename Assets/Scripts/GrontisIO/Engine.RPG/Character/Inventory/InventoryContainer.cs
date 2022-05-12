@@ -1,8 +1,8 @@
 using System;
 using System.Collections.Generic;
-using GrontisIO.engine.RPG.Items.Interfaces;
+using GrontisIO.Engine.RPG.Items.Interfaces;
 
-namespace GrontisIO.engine.RPG.Character.Inventory
+namespace GrontisIO.Engine.RPG.Character.Inventory
 {
     public class InventoryContainer
     {
@@ -11,22 +11,23 @@ namespace GrontisIO.engine.RPG.Character.Inventory
 
         public void Add(IItem item)
         {
-            throw new NotImplementedException();
+            _items.Add(item);
         }
         
         public void Remove(IItem item)
         {
-            throw new NotImplementedException();
+            _items.Remove(item);
         }
         
         public void IncreaseCurrency(float amount)
         {
-            throw new NotImplementedException();
+            _currency += amount;
         }
         
         public void DecreaseCurrency(float amount)
         {
-            throw new NotImplementedException();
+            //TODO logic against currency falling below 0?
+            _currency -= amount;
         }
     }
 }

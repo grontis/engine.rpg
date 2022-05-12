@@ -1,15 +1,15 @@
 using System;
 using System.Collections.Generic;
-using GrontisIO.engine.RPG.Turn.Interfaces;
+using GrontisIO.Engine.RPG.Turn.Interfaces;
 
-namespace GrontisIO.engine.RPG.Turn
+namespace GrontisIO.Engine.RPG.Turn
 {
     public class TurnManager
     {
-        private engine.RPG.Turn.Turn _currentTurn;
+        private Turn _currentTurn;
         
         public readonly TurnOrder Order;
-        public engine.RPG.Turn.Turn CurrentTurn => _currentTurn;
+        public Turn CurrentTurn => _currentTurn;
 
         public TurnManager(List<ITurnEntity> entities)
         {
@@ -18,7 +18,7 @@ namespace GrontisIO.engine.RPG.Turn
 
         public void StartTurnSession()
         {
-            _currentTurn = new engine.RPG.Turn.Turn(Order.CurrentElement);
+            _currentTurn = new Turn(Order.CurrentElement);
         }
 
         public void NextTurn()

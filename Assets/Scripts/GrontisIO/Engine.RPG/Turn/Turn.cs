@@ -1,6 +1,6 @@
-using GrontisIO.engine.RPG.Turn.Interfaces;
+using GrontisIO.Engine.RPG.Turn.Interfaces;
 
-namespace GrontisIO.engine.RPG.Turn
+namespace GrontisIO.Engine.RPG.Turn
 {
     public class Turn
     {

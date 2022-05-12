@@ -1,6 +1,4 @@
-using UnityEngine;
-
-namespace GrontisIO.RPG.Character
+namespace GrontisIO.Engine.RPG.Character
 {
     public class Stats
     {

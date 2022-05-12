@@ -1,4 +1,4 @@
-namespace GrontisIO.engine.RPG.Interfaces
+namespace GrontisIO.Engine.RPG.Interfaces
 {
     public interface IDataTransferObject
     {

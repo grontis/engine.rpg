@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using GrontisIO.engine.RPG.Turn.Interfaces;
+using GrontisIO.Engine.RPG.Turn.Interfaces;
 
-namespace GrontisIO.engine.RPG.Turn
+namespace GrontisIO.Engine.RPG.Turn
 {
     public class TurnOrder : ITurnOrder
     {

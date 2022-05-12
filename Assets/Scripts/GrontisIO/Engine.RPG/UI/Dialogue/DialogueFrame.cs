@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace GrontisIO.engine.RPG.UI.Dialogue
+namespace GrontisIO.Engine.RPG.UI.Dialogue
 {
     public class DialogueFrame : MonoBehaviour
     {
