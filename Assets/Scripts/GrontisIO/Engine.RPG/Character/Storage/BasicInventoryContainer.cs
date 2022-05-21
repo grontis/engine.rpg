@@ -1,10 +1,9 @@
-using System;
 using System.Collections.Generic;
 using GrontisIO.Engine.RPG.Items.Interfaces;
 
-namespace GrontisIO.Engine.RPG.Character.Inventory
+namespace GrontisIO.Engine.RPG.Character.Storage
 {
-    public class InventoryContainer
+    public class BasicInventoryContainer : IInventoryContainer
     {
         private List<IItem> _items;
         private float _currency;
@@ -30,4 +29,5 @@ namespace GrontisIO.Engine.RPG.Character.Inventory
             _currency -= amount;
         }
     }
+
 }
