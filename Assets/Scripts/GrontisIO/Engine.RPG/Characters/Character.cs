@@ -1,4 +1,7 @@
-namespace GrontisIO.Engine.RPG.Character
+using System.Collections.Generic;
+using GrontisIO.Engine.RPG.Characters.Abilities;
+
+namespace GrontisIO.Engine.RPG.Characters
 {
     using Storage;
     
@@ -7,5 +10,6 @@ namespace GrontisIO.Engine.RPG.Character
         public Details Details;
         public Stats Stats;
         public Inventory Inventory;
+        public List<IAbility> Abilities;
     }
 }

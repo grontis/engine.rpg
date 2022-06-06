@@ -1,6 +1,6 @@
 using GrontisIO.Engine.RPG.Items.Interfaces;
 
-namespace GrontisIO.Engine.RPG.Character.Storage
+namespace GrontisIO.Engine.RPG.Characters.Storage.Interfaces
 {
     public interface IInventoryContainer
     {

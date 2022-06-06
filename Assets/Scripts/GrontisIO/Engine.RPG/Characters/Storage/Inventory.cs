@@ -1,4 +1,6 @@
-namespace GrontisIO.Engine.RPG.Character.Storage
+using GrontisIO.Engine.RPG.Characters.Storage.Interfaces;
+
+namespace GrontisIO.Engine.RPG.Characters.Storage
 {
     public class Inventory
     {

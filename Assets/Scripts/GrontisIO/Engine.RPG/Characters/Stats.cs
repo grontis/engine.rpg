@@ -1,4 +1,4 @@
-namespace GrontisIO.Engine.RPG.Character
+namespace GrontisIO.Engine.RPG.Characters
 {
     public abstract class Stats
     {

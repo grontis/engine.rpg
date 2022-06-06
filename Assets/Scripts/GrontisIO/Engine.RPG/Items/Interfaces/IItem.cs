@@ -2,7 +2,7 @@ namespace GrontisIO.Engine.RPG.Items.Interfaces
 {
     public interface IItem
     {
-        public string ID { get; set; }
+        public string Id { get; set; }
 
         public string Name { get; set; }
     }
