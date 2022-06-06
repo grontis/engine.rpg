@@ -1,5 +1,4 @@
 using GrontisIO.Engine.RPG.Events.Interfaces;
-using GrontisIO.Engine.RPG.Interfaces;
 using UnityEngine;
 
 namespace GrontisIO.Engine.RPG.Dialogue

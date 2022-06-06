@@ -7,7 +7,6 @@ namespace GrontisIO.Engine.RPG.Characters.Storage
     public class BasicInventoryContainer : IInventoryContainer
     {
         private List<IItem> _items;
-
         public IReadOnlyCollection<IItem> Items => _items.AsReadOnly();
         public float Currency { get; private set; }
 
@@ -28,7 +27,12 @@ namespace GrontisIO.Engine.RPG.Characters.Storage
         
         public void DecreaseCurrency(float amount)
         {
-            //TODO logic against currency falling below 0?
+            if (amount > Currency)
+            {
+                Currency = 0;
+                return;
+            }
+            
             Currency -= amount;
         }
     }

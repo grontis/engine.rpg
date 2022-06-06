@@ -1,12 +1,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using GrontisIO.Engine.RPG.Dialogue;
-using GrontisIO.Engine.RPG.Interfaces;
+using UnityEngine;
 using UnityEngine;
 
 namespace GrontisIO.Engine.RPG.UI.Dialogue
 {
-    public class DialogueUIManager : MonoBehaviour, IManager 
+    public class DialogueUIManager : MonoBehaviour 
     {
         public DialogueFrame dialogueFrame;
         private Queue<string> _sentences;
