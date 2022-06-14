@@ -4,6 +4,6 @@ namespace GrontisIO.Engine.RPG.Events.Interfaces
 {
     public interface IDemoEventHandler : IEventSystemHandler
     {
-        //void OnEvent(EventData eventData);
+        void OnEvent(IDataTransferObject eventData);
     }
 }

@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using System.Linq;
 using GrontisIO.Engine.RPG.Dialogue;
 using UnityEngine;
-using UnityEngine;
 
 namespace GrontisIO.Engine.RPG.UI.Dialogue
 {
