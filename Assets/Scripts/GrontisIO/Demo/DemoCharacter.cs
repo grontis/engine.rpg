@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using GrontisIO.Engine.RPG.Characters;
 using GrontisIO.Engine.RPG.Characters.Abilities;
 using GrontisIO.Engine.RPG.Characters.Storage;
+using GrontisIO.Engine.RPG.Events;
+using GrontisIO.Engine.RPG.Events.Interfaces;
 using GrontisIO.Engine.RPG.UI.Ability;
 using UnityEngine;
 
 namespace GrontisIO.Demo
 {
-    public class DemoCharacter : MonoBehaviour, ICharacter
+    public class DemoCharacter : MonoBehaviour, ICharacter, IEventSubscriber
     {
         public Details Details { get; set; }
         public Stats Stats { get; set; }
@@ -17,7 +19,7 @@ namespace GrontisIO.Demo
 
         private void Start()
         {
-            
+            SubscribeEvents();
         }
 
         private void Update()
@@ -25,9 +27,26 @@ namespace GrontisIO.Demo
         
         }
 
-        public void OnAbilityUsed(object source, EventArgs e)
+        private void OnDestroy()
         {
-            Debug.Log("Ability used");
+            UnsubscribeEvents();
         }
+
+        public void SubscribeEvents()
+        {
+            EventManager.Instance.OnAbilityUsed += OnAbilityUsed;
+        }
+
+        public void UnsubscribeEvents()
+        {
+            EventManager.Instance.OnAbilityUsed -= OnAbilityUsed;
+        }
+
+        public void OnAbilityUsed(IAbility ability)
+        {
+            Debug.Log($"{ability.Name} used");
+        }
+
+        
     }
 }

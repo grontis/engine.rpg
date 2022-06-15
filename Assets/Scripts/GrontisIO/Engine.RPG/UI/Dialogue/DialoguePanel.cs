@@ -1,12 +1,13 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace GrontisIO.Engine.RPG.UI.Dialogue
 {
-    public class DialogueFrame : MonoBehaviour
+    public class DialoguePanel : MonoBehaviour
     {
-        public Text characterName;
-        public Text dialogue;
+        public TextMeshProUGUI characterName;
+        public TextMeshProUGUI dialogue;
         public Button continueBtn;
         public Button endBtn;
     }

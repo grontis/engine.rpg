@@ -1,51 +1,73 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using GrontisIO.Engine.RPG.Dialogue;
+using GrontisIO.Engine.RPG.Events;
+using GrontisIO.Engine.RPG.Events.Interfaces;
 using UnityEngine;
 
 namespace GrontisIO.Engine.RPG.UI.Dialogue
 {
-    public class DialogueUIManager : MonoBehaviour 
+    public class DialogueUIManager : MonoBehaviour , IEventSubscriber
     {
-        public DialogueFrame dialogueFrame;
+        public DialoguePanel dialoguePanel;
         private Queue<string> _sentences;
 
         private void Start()
         {
+            SubscribeEvents();
+            
             _sentences = new Queue<string>(); 
         }
 
-        public void StartDialogue(DialogueDTO dialogueDto)
+        private void OnDestroy()
         {
-            dialogueFrame.continueBtn.gameObject.SetActive(true);
-            dialogueFrame.endBtn.gameObject.SetActive(false);
-            dialogueFrame.characterName.text = dialogueDto.characterName;
-        
-            foreach (string sentence in dialogueDto.sentences)
+            UnsubscribeEvents();
+        }
+
+        public void SubscribeEvents()
+        {
+            EventManager.Instance.OnDialogueTriggered += StartDialogue;
+            EventManager.Instance.OnNextSentenceTriggered += DisplayNextSentence;
+            EventManager.Instance.OnEndDialogueTriggered += EndDialogue;
+        }
+
+        public void UnsubscribeEvents()
+        {
+            EventManager.Instance.OnDialogueTriggered -= StartDialogue;
+            EventManager.Instance.OnNextSentenceTriggered -= DisplayNextSentence;
+            EventManager.Instance.OnEndDialogueTriggered -= EndDialogue;
+        }
+
+        private void StartDialogue(DialogueDTO dialogueDto)
+        {
+            _sentences = new Queue<string>();
+            foreach (var sentence in dialogueDto.sentences)
             {
                 _sentences.Enqueue(sentence);
             }
-        
-            dialogueFrame.gameObject.SetActive(true);
+            
+            dialoguePanel.continueBtn.gameObject.SetActive(true);
+            dialoguePanel.endBtn.gameObject.SetActive(false);
+            dialoguePanel.characterName.text = dialogueDto.characterName;
+            dialoguePanel.gameObject.SetActive(true);
             DisplayNextSentence();
         }
         
-        //TODO eventing for next/end btns?
-        public void DisplayNextSentence()
+        private void DisplayNextSentence()
         {
-            string sentence = _sentences.Dequeue();
-            dialogueFrame.dialogue.text = sentence;
-        
-            if (!_sentences.Any())
-            {
-                dialogueFrame.continueBtn.gameObject.SetActive(false);
-                dialogueFrame.endBtn.gameObject.SetActive(true);
-            }
+            var sentence = _sentences.Dequeue();
+            dialoguePanel.dialogue.text = sentence;
+
+            if (_sentences.Any()) return;
+            
+            dialoguePanel.continueBtn.gameObject.SetActive(false);
+            dialoguePanel.endBtn.gameObject.SetActive(true);
         }
-        
-        public void EndDialogue()
+
+        private void EndDialogue()
         {
-            dialogueFrame.gameObject.SetActive(false);
+            dialoguePanel.gameObject.SetActive(false);
             _sentences.Clear();
         }
     }

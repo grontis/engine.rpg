@@ -4,6 +4,6 @@ namespace GrontisIO.Engine.RPG.Turn.Interfaces
 {
     public interface ITurnEntity
     {
-        public Character Character { get; set; }
+        public ICharacter Character { get; set; }
     }
 }
