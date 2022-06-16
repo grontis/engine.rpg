@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using GrontisIO.Engine.RPG.Characters;
 using GrontisIO.Engine.RPG.Turn.Interfaces;
 
 namespace GrontisIO.Engine.RPG.Turn
@@ -11,7 +12,7 @@ namespace GrontisIO.Engine.RPG.Turn
         public readonly TurnOrder Order;
         public Turn CurrentTurn => _currentTurn;
 
-        public TurnManager(List<ITurnEntity> entities)
+        public TurnManager(List<ICharacter> entities)
         {
             Order = new TurnOrder(entities);
         }
@@ -24,15 +25,15 @@ namespace GrontisIO.Engine.RPG.Turn
         public void NextTurn()
         {
             Order.Iterate();
-            _currentTurn.Entity = Order.CurrentElement;
+            _currentTurn.Character = Order.CurrentElement;
         }
 
-        public void AddEntity(ITurnEntity entity)
+        public void AddEntity(ICharacter entity)
         {
             throw new NotImplementedException();
         }        
         
-        public void RemoveEntity(ITurnEntity entity)
+        public void RemoveEntity(ICharacter entity)
         {
             throw new NotImplementedException();
         }

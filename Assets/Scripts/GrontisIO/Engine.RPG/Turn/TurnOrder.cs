@@ -1,20 +1,21 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using GrontisIO.Engine.RPG.Characters;
 using GrontisIO.Engine.RPG.Turn.Interfaces;
 
 namespace GrontisIO.Engine.RPG.Turn
 {
     public class TurnOrder : ITurnOrder
     {
-        private List<ITurnEntity> _entities;
+        private List<ICharacter> _entities;
         private int _position;
 
         public int Count => _entities.Count();
-        public ITurnEntity CurrentElement => GetElementAt(_position);
+        public ICharacter CurrentElement => GetElementAt(_position);
         public int CurrentIndex => _position;
 
-        public TurnOrder(List<ITurnEntity> entities)
+        public TurnOrder(List<ICharacter> entities)
         {
             _entities = entities;
             _position = 0;
@@ -25,30 +26,31 @@ namespace GrontisIO.Engine.RPG.Turn
         
         public void Iterate()
         {
+            //TODO Raise event for a new turn, when the turn order iterates? UI can subscribe and update accordingly?
             throw new System.NotImplementedException();
         }
 
-        public ITurnEntity GetElementAt(int index)
+        public ICharacter GetElementAt(int index)
         {
             throw new System.NotImplementedException();
         }
 
-        public ReadOnlyCollection<ITurnEntity> GetAll()
+        public ReadOnlyCollection<ICharacter> GetAll()
         {
             throw new System.NotImplementedException();
         }
 
-        public void Add(ITurnEntity entity)
+        public void Add(ICharacter entity)
         {
             throw new System.NotImplementedException();
         }
 
-        public void Remove(ITurnEntity entity)
+        public void Remove(ICharacter entity)
         {
             throw new System.NotImplementedException();
         }
 
-        public void Sort(ITurnEntity entity)
+        public void Sort(ICharacter entity)
         {
             throw new System.NotImplementedException();
         }

@@ -36,6 +36,12 @@ namespace GrontisIO.Engine.RPG.Events
         {
             OnEndDialogueTriggered?.Invoke();
         }
+        
+        public event Action OnTurnEnded;
+        public void TurnEnded()
+        {
+            OnTurnEnded?.Invoke();
+        }
 
         public event Action<IAbility> OnAbilityUsed;
         public void AbilityUsed(IAbility ability)

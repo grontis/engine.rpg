@@ -47,6 +47,11 @@ namespace GrontisIO.Engine.RPG.UI.Dialogue
                 _sentences.Enqueue(sentence);
             }
             
+            /*TODO
+                abstract this below panel logic into the panel so that this class doesnt depend too much
+                on what the panel is made up of.
+                dialoguePanel.Init()?
+            */
             dialoguePanel.continueBtn.gameObject.SetActive(true);
             dialoguePanel.endBtn.gameObject.SetActive(false);
             dialoguePanel.characterName.text = dialogueDto.characterName;
