@@ -1,14 +1,15 @@
+using GrontisIO.Engine.RPG.Characters;
 using GrontisIO.Engine.RPG.Turn.Interfaces;
 
 namespace GrontisIO.Engine.RPG.Turn
 {
     public class Turn
     {
-        public ITurnEntity Entity { get; set; }
+        public ICharacter Character { get; set; }
 
-        public Turn(ITurnEntity entity)
+        public Turn(ICharacter character)
         {
-            Entity = entity;
+            Character = character;
         }
     }
 }

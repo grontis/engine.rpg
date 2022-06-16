@@ -1,10 +1,7 @@
 using System;
-using System.Collections.Generic;
 using GrontisIO.Engine.RPG.Characters.Abilities;
 using GrontisIO.Engine.RPG.Dialogue;
-using GrontisIO.Engine.RPG.UI.Ability;
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace GrontisIO.Engine.RPG.Events
 {
