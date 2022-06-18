@@ -1,28 +1,46 @@
+using System;
+using GrontisIO.Engine.RPG.Events;
+using GrontisIO.Engine.RPG.Events.Interfaces;
+using GrontisIO.Engine.RPG.Turn;
 using GrontisIO.Engine.RPG.UI.Turn;
 using TMPro;
 using UnityEngine;
 
 namespace GrontisIO.Demo
 {
-    public class DemoTurnOrderPanel : TurnOrderPanel
+    public class DemoTurnOrderPanel : TurnOrderPanel, IEventSubscriber
     {
         public TextMeshProUGUI characters;
-        
-        void Start()
+        private TurnOrder _turnOrder;
+
+        private void Start()
+        {
+            SubscribeEvents();
+        }
+
+        private void Update()
         {
         
         }
 
-        void Update()
+        private void OnDestroy()
         {
-        
+            UnsubscribeEvents();
+        }
+
+        public void SubscribeEvents()
+        {
+            EventManager.Instance.OnTurnEnded += NextTurn;
+        }
+
+        public void UnsubscribeEvents()
+        {
+            EventManager.Instance.OnTurnEnded -= NextTurn;
         }
 
         public override void NextTurn()
         {
-            //TODO how to connect the TurnOrder data with this component?
-            //Contains a member reference?
-            //Event based
+            _turnOrder.Iterate();
         }
     }
 }

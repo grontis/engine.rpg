@@ -26,8 +26,7 @@ namespace GrontisIO.Engine.RPG.Turn
         
         public void Iterate()
         {
-            //TODO Raise event for a new turn, when the turn order iterates? UI can subscribe and update accordingly?
-            throw new System.NotImplementedException();
+            
         }
 
         public ICharacter GetElementAt(int index)
