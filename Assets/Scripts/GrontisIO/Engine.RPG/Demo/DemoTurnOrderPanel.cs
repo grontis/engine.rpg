@@ -1,12 +1,10 @@
-using System;
 using GrontisIO.Engine.RPG.Events;
 using GrontisIO.Engine.RPG.Events.Interfaces;
 using GrontisIO.Engine.RPG.Turn;
 using GrontisIO.Engine.RPG.UI.Turn;
 using TMPro;
-using UnityEngine;
 
-namespace GrontisIO.Demo
+namespace GrontisIO.Engine.RPG.Demo
 {
     public class DemoTurnOrderPanel : TurnOrderPanel, IEventSubscriber
     {

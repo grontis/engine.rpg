@@ -3,7 +3,7 @@ using GrontisIO.Engine.RPG.Turn.Interfaces;
 using GrontisIO.Engine.RPG.UI.Interfaces;
 using UnityEngine;
 
-namespace GrontisIO.Demo
+namespace GrontisIO.Engine.RPG.Demo
 {
     public class DemoEndTurnBtn : MonoBehaviour, IButton, IEndTurnTrigger
     {

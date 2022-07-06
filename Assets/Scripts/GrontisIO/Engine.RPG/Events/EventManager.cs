@@ -18,8 +18,8 @@ namespace GrontisIO.Engine.RPG.Events
                 Instance = this;
         }
 
-        public event Action<DialogueDTO> OnDialogueTriggered;
-        public void DialogueTriggered(DialogueDTO dialogue)
+        public event Action<DialogueDto> OnDialogueTriggered;
+        public void DialogueTriggered(DialogueDto dialogue)
         {
             OnDialogueTriggered?.Invoke(dialogue);
         }

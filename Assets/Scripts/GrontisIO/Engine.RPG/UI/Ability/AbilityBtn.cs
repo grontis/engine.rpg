@@ -1,5 +1,5 @@
 using System;
-using GrontisIO.Demo;
+using GrontisIO.Engine.RPG.Demo;
 using GrontisIO.Engine.RPG.Events;
 using GrontisIO.Engine.RPG.UI.Interfaces;
 using TMPro;

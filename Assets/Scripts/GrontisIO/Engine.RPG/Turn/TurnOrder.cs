@@ -8,16 +8,16 @@ namespace GrontisIO.Engine.RPG.Turn
 {
     public class TurnOrder : ITurnOrder
     {
-        private List<ICharacter> _entities;
+        private List<ICharacter> _characters;
         private int _position;
 
-        public int Count => _entities.Count();
+        public int Count => _characters.Count();
         public ICharacter CurrentElement => GetElementAt(_position);
         public int CurrentIndex => _position;
 
-        public TurnOrder(List<ICharacter> entities)
+        public TurnOrder(List<ICharacter> characters)
         {
-            _entities = entities;
+            _characters = characters;
             _position = 0;
             
             //TODO should the sorting be the responsibility of the order?
@@ -31,27 +31,27 @@ namespace GrontisIO.Engine.RPG.Turn
 
         public ICharacter GetElementAt(int index)
         {
-            throw new System.NotImplementedException();
+            return _characters.ElementAt(index);
         }
 
         public ReadOnlyCollection<ICharacter> GetAll()
         {
-            throw new System.NotImplementedException();
+            return _characters.AsReadOnly();
         }
 
-        public void Add(ICharacter entity)
+        public void Add(ICharacter character)
         {
-            throw new System.NotImplementedException();
+            _characters.Add(character);
         }
 
-        public void Remove(ICharacter entity)
+        public void Remove(ICharacter character)
         {
-            throw new System.NotImplementedException();
+            _characters.Remove(character);
         }
 
-        public void Sort(ICharacter entity)
+        public void Sort(ICharacter character)
         {
-            throw new System.NotImplementedException();
+            //TODO take in a func as argument for sorting algorithm?
         }
     }
 }

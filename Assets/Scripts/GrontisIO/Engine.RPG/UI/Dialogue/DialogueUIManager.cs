@@ -39,7 +39,7 @@ namespace GrontisIO.Engine.RPG.UI.Dialogue
             EventManager.Instance.OnEndDialogueTriggered -= EndDialogue;
         }
 
-        private void StartDialogue(DialogueDTO dialogueDto)
+        private void StartDialogue(DialogueDto dialogueDto)
         {
             _sentences = new Queue<string>();
             foreach (var sentence in dialogueDto.sentences)

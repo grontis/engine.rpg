@@ -46,16 +46,16 @@ namespace GrontisIO.Engine.RPG.Turn
             _currentTurn = new Turn(_turnOrder.CurrentElement);
         }
 
-        public void AddEntity(ICharacter entity)
+        public void AddEntity(ICharacter character)
         {
             //TODO event for adding to turn order
-            throw new NotImplementedException();
+            _turnOrder.Add(character);
         }        
         
-        public void RemoveEntity(ICharacter entity)
+        public void RemoveEntity(ICharacter character)
         {
             //TODO event for triggering removal from turn order
-            throw new NotImplementedException();
+            _turnOrder.Remove(character);
         }
     }
 }

@@ -4,7 +4,7 @@ using GrontisIO.Engine.RPG.Events;
 using GrontisIO.Engine.RPG.UI.Interfaces;
 using UnityEngine;
 
-namespace GrontisIO.Demo
+namespace GrontisIO.Engine.RPG.Demo
 {
     public class DemoDialogueTrigger : MonoBehaviour, IDialogueTrigger, IButton
     {
@@ -13,10 +13,10 @@ namespace GrontisIO.Demo
 
         public void OnClick()
         {
-             TriggerDialogue(new DialogueDTO {characterName = characterName, sentences = sentences});
+             TriggerDialogue(new DialogueDto {characterName = characterName, sentences = sentences});
         }
 
-        public void TriggerDialogue(DialogueDTO dialogue)
+        public void TriggerDialogue(DialogueDto dialogue)
         {
             EventManager.Instance.DialogueTriggered(dialogue);
         }

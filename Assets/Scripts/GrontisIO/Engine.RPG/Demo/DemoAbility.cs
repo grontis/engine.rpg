@@ -2,7 +2,7 @@ using System;
 using GrontisIO.Engine.RPG.Characters.Abilities;
 using UnityEngine;
 
-namespace GrontisIO.Demo
+namespace GrontisIO.Engine.RPG.Demo
 {
     //TODO serialize this class so that it can be edited in Editor without being attached to a gameobject
     [Serializable]

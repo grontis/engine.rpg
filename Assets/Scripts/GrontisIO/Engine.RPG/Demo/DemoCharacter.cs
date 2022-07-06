@@ -1,14 +1,12 @@
-using System;
 using System.Collections.Generic;
 using GrontisIO.Engine.RPG.Characters;
 using GrontisIO.Engine.RPG.Characters.Abilities;
 using GrontisIO.Engine.RPG.Characters.Storage;
 using GrontisIO.Engine.RPG.Events;
 using GrontisIO.Engine.RPG.Events.Interfaces;
-using GrontisIO.Engine.RPG.UI.Ability;
 using UnityEngine;
 
-namespace GrontisIO.Demo
+namespace GrontisIO.Engine.RPG.Demo
 {
     public class DemoCharacter : MonoBehaviour, ICharacter, IEventSubscriber
     {
